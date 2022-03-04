@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="dist/img/favicon.ico" type="image/x-icon" />
@@ -22,7 +22,17 @@
 
   <body>
     <header></header>
-    <main></main>
+    <main>
+      <p id="text">Get your weather information by pressing the button!</p>
+      <button class="geolocation-btn" id="data-btn">get data</button>
+      <button id="decline-btn">I wish to manually set my location</button>
+      <section class="hidden">
+        <input type="text" placeholder="City" required />
+        <input type="text" placeholder="State" />
+        <input type="text" placeholder="Country" />
+        <button class="geolocation-btn" id="alt-btn">confirm</button>
+      </section>
+    </main>
     <footer></footer>
     <script
       type="module"
