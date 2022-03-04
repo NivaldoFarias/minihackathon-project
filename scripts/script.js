@@ -6,10 +6,15 @@ let text = document.getElementById("text");
 InitializeBtn();
 
 function InitializeBtn() {
-  const btn = document.querySelector(".geolocation-btn");
-  btn.addEventListener("click", () => {
+  const geolocationBtn = document.querySelector("#data-btn");
+  geolocationBtn.addEventListener("click", () => {
     getLocation();
-    btn.classList.add("clicked");
+    geolocationBtn.classList.add("clicked");
+  });
+  const adressBtn = document.querySelector("#alt-btn");
+  adressBtn.addEventListener("click", () => {
+    getWeatherDataAdress();
+    adressBtn.classList.add("clicked");
   });
 }
 
@@ -28,11 +33,20 @@ function showPosition(position) {
     position.coords.latitude +
     "<br>Longitude: " +
     position.coords.longitude;
-    getWeatherData(position)
+    getWeatherDataLatLon(position)
 }
 
-function getWeatherData(position){
+function getWeatherDataLatLon(position){
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`)
+  .then((response) => response.json())
+  .then(data => console.log(data))
+}
+
+function getWeatherDataAdress(){
+  const city = document.querySelector("#city").value
+  const state = document.querySelector("#state").value
+  const country = document.querySelector("#country").value
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${API_KEY}`)
   .then((response) => response.json())
   .then(data => console.log(data))
 }
