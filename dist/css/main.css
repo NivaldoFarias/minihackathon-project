@@ -8,6 +8,10 @@
   cursor: default;
 }
 
+*.hidden {
+  display: none;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -15,6 +19,11 @@ body {
 }
 
 main {
+  height: inherit;
+  width: inherit;
+}
+
+#first-screen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

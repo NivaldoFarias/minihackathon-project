@@ -9,6 +9,10 @@ body {
   overflow: hidden;
 }
 main {
+  height: inherit;
+  width: inherit;
+}
+#first-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
