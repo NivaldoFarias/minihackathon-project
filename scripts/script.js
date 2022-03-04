@@ -28,7 +28,6 @@ const showPositionCallback = (position) => {
 };
 
 function showPosition(position) {
-  console.log("dsad");
   text.innerHTML =
     "Latitude: " +
     position.coords.latitude +
