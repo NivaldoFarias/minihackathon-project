@@ -2,10 +2,16 @@ const API_KEY="42b5ff12a2084bc029141577acd4bc26"
 
 
 let text = document.getElementById("text");
-const btn = document.querySelector(".geolocation-btn");
-btn.addEventListener("click", () => {
-  getLocation();
-});
+
+InitializeBtn();
+
+function InitializeBtn() {
+  const btn = document.querySelector(".geolocation-btn");
+  btn.addEventListener("click", () => {
+    getLocation();
+    btn.classList.add("clicked");
+  });
+}
 
 function getLocation() {
   if (navigator.geolocation) {

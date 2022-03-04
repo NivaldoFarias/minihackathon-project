@@ -2,6 +2,62 @@
 @import "./variables";
 @import "./mixins";
 
+body {
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+}
+section {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  gap: 14px;
+  padding: 19px;
+
+  height: fit-content;
+  width: 100%;
+
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  #alt-btn {
+    align-self: center;
+  }
+}
+button:hover {
+  cursor: pointer;
+}
+input {
+  padding: 0 14px;
+  height: 46px;
+  width: 100%;
+
+  font-style: italic;
+  font-size: 1.5em;
+  line-height: 46px;
+  color: rgba(186, 186, 186, 1);
+
+  cursor: text;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: $default-border-radius;
+}
+p {
+  margin-top: 30px;
+
+  font-size: 1.5em;
+  text-align: center;
+
+  word-wrap: break-word;
+}
 .geolocation-btn {
   position: relative;
   left: 0px;
@@ -28,4 +84,19 @@
   top: 4px;
 
   box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+}
+button:hover {
+  cursor: pointer;
+}
+#decline-btn {
+  margin-bottom: 30px;
+
+  font-size: 15px;
+  color: rgba(129, 129, 129, 1);
+
+  border-style: none;
+  background-color: inherit;
+}
+#decline-btn:hover {
+  filter: brightness(50%);
 }
