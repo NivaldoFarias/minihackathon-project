@@ -1,3 +1,31 @@
 @import "./resets";
 @import "./variables";
 @import "./mixins";
+
+.geolocation-btn {
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  padding: 15px;
+  width: 180px;
+
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $default-red;
+
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out 0s;
+
+  border: 1px solid $default-red;
+  box-shadow: $default-red 4px 4px 0px 0px;
+  background-color: rgb(255, 255, 255);
+}
+.geolocation-btn.clicked {
+  left: 4px;
+  top: 4px;
+
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+}
