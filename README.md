@@ -6,7 +6,7 @@
     <img src="https://www.driven.com.br/wp-content/uploads/2021/11/logo-footer.svg" alt="Logo" width="100">
   </a>
 
-<h3 align="center">Team Undefined - Driven Mini Hackathon</h3>
+<h3 align="center">Team Undefined - Driven Education Mini Hackathon</h3>
   <h6 align="center">WIP</h6>
   <p align="center">
     Web Development Hackathon Project using HTML, SCSS and JS
