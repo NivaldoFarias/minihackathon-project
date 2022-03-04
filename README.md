@@ -52,11 +52,12 @@ In this section I included all Youtube content I used or refered to while studyi
 [slack-shield]: https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white
 [slack-url]: https://driventurmas.slack.com/team/U02T6V2D8D8/
 
-<!-- ### Contributors
+### Contributors
 
-<a href="https://github.com/NivaldoFarias/minihackathon-undefined/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=NivaldoFarias/minihackathon-undefined" />
+<a href="https://github.com/NivaldoFarias/minihackathon-project/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=NivaldoFarias/minihackathon-project" />
 </a>
 
 ##### Made with [contrib.rocks](https://contrib.rocks).
- -->
+
+test
