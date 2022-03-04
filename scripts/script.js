@@ -1,3 +1,6 @@
+const API_KEY="42b5ff12a2084bc029141577acd4bc26"
+
+
 let text = document.getElementById("text");
 const btn = document.querySelector(".geolocation-btn");
 btn.addEventListener("click", () => {
@@ -19,4 +22,11 @@ function showPosition(position) {
     position.coords.latitude +
     "<br>Longitude: " +
     position.coords.longitude;
+    getWeatherData(position)
+}
+
+function getWeatherData(position){
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`)
+  .then((response) => response.json())
+  .then(data => console.log(data))
 }
