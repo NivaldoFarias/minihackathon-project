@@ -48,6 +48,7 @@ main > div {
   position: relative;
   gap: 14px;
   padding: 19px;
+  margin-top: 50px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
