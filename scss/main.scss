@@ -11,29 +11,32 @@ body {
 main {
   height: inherit;
   width: inherit;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+  }
 }
 #first-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3vh;
-}
-section {
-  display: flex;
-  flex-direction: column;
+  section {
+    display: flex;
+    flex-direction: column;
 
-  position: relative;
-  gap: 14px;
-  padding: 19px;
+    position: relative;
+    gap: 14px;
+    padding: 19px;
 
-  height: fit-content;
-  width: 400px;
+    height: fit-content;
+    width: 400px;
 
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
-  #alt-btn {
-    align-self: center;
+    #alt-btn {
+      align-self: center;
+    }
   }
 }
 button:hover {
@@ -61,6 +64,10 @@ p {
   text-align: center;
 
   word-wrap: break-word;
+}
+sup {
+  vertical-align: super;
+  font-size: 0.5em;
 }
 .geolocation-btn {
   position: relative;
@@ -91,6 +98,21 @@ p {
 }
 button:hover {
   cursor: pointer;
+}
+#minor-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  margin: 30px 0;
+
+  p {
+    margin-top: 0 !important;
+  }
+}
+.day-info div {
+  text-align: center;
+  font-size: 0.7em;
 }
 #decline-btn {
   margin-bottom: 30px;

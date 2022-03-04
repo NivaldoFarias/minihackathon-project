@@ -21,9 +21,8 @@
   </head>
 
   <body>
-    <header></header>
     <main>
-      <div id="first-screen">
+      <div id="first-screen" class="hidden">
         <p id="text">Get your weather information by pressing the button!</p>
         <button class="geolocation-btn" id="data-btn">get data</button>
         <button id="decline-btn">I wish to manually set my location</button>
@@ -34,7 +33,36 @@
           <button class="geolocation-btn" id="alt-btn">confirm</button>
         </section>
       </div>
-      <div id="second-screen" class="hidden"></div>
+      <div id="second-screen">
+        <header>
+          <!-- img -->
+          Snowy
+        </header>
+        <section>
+          <article>
+            <p class="minor-text">London UK</p>
+            <p class="minor-text">Monday 20<sup>th</sup></p>
+            <p class="small-text">minimum 2&#176;C</p>
+            <p class="small-text">-6&#176;C</p>
+            <p id="degrees-data">-4&#176;</p>
+          </article>
+          <div id="minor-info">
+            <div class="day-info">
+              <div>Tue</div>
+              <p class="days">-1&#176;</p>
+            </div>
+            <div class="day-info">
+              <div>Wed</div>
+              <p class="days">4&#176;</p>
+            </div>
+            <div class="day-info">
+              <div>Thu</div>
+              <p class="days">3&#176;</p>
+            </div>
+          </div>
+          <button class="geolocation-btn" id="home-btn">Return</button>
+        </section>
+      </div>
     </main>
     <footer></footer>
     <script
