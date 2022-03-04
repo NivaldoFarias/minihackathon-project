@@ -1,8 +1,24 @@
-const API_KEY="42b5ff12a2084bc029141577acd4bc26"
+const API_KEY = "42b5ff12a2084bc029141577acd4bc26";
 
-
+let lat;
+let lon;
 let text = document.getElementById("text");
 
+function geolocationAvailable() {
+  if ("geolocation" in navigator) {
+    const geolocation =
+      navigator.geolocation.getCurrentPosition(showPositionCallback);
+  } else {
+    alert("Seu navegador não suporta geolocalização");
+  }
+}
+
+const showPositionCallback = (position) => {
+  lat = position.coords.latitude;
+  lon = position.coords.longitude;
+};
+
+geolocationAvailable();
 InitializeBtn();
 
 function InitializeBtn() {
@@ -28,11 +44,13 @@ function showPosition(position) {
     position.coords.latitude +
     "<br>Longitude: " +
     position.coords.longitude;
-    getWeatherData(position)
+  getWeatherData(position);
 }
 
-function getWeatherData(position){
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`)
-  .then((response) => response.json())
-  .then(data => console.log(data))
+function getWeatherData(position) {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
