@@ -17,9 +17,9 @@ const showPositionCallback = (position) => {
 };
 
 geolocationAvailable();
-InitializeBtn();
+initializeBtn();
 
-function InitializeBtn() {
+function initializeBtn() {
     const btn = document.querySelector(".geolocation-btn");
     btn.addEventListener("click", () => {
     getLocation();
