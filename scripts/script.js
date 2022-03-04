@@ -1,15 +1,25 @@
 const API_KEY = "42b5ff12a2084bc029141577acd4bc26";
 
+let geolocation
 let lat;
 let lon;
 let text = document.getElementById("text");
 
 function geolocationAvailable() {
   if ("geolocation" in navigator) {
-    const geolocation =
+    geolocation =
       navigator.geolocation.getCurrentPosition(showPositionCallback);
   } else {
     alert("Seu navegador não suporta geolocalização");
+  }
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    geolocation =
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    text.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
@@ -17,6 +27,16 @@ const showPositionCallback = (position) => {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
 };
+
+function showPosition(position) {
+  console.log("dsad");
+  text.innerHTML =
+    "Latitude: " +
+    position.coords.latitude +
+    "<br>Longitude: " +
+    position.coords.longitude;
+    getWeatherDataLatLon(position)
+}
 
 geolocationAvailable();
 InitializeBtn();
@@ -34,23 +54,7 @@ function InitializeBtn() {
   });
 }
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    text.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
 
-function showPosition(position) {
-  console.log("dsad");
-  text.innerHTML =
-    "Latitude: " +
-    position.coords.latitude +
-    "<br>Longitude: " +
-    position.coords.longitude;
-    getWeatherDataLatLon(position)
-}
 
 function getWeatherDataLatLon(position){
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`)
