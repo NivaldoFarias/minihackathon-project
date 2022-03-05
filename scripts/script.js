@@ -22,19 +22,6 @@ const showPositionCallback = (position) => {
 geolocationAvailable();
 InitializeBtn();
 
-function InitializeBtn() {
-  const geolocationBtn = document.querySelector("#data-btn");
-  geolocationBtn.addEventListener("click", () => {
-    getLocation();
-    geolocationBtn.classList.add("clicked");
-  });
-  const adressBtn = document.querySelector("#alt-btn");
-  adressBtn.addEventListener("click", () => {
-    getWeatherDataAdress();
-    adressBtn.classList.add("clicked");
-  });
-}
-
 function getLocation() {
   if (navigator.geolocation) {
     geolocation = navigator.geolocation.getCurrentPosition(showPosition);
@@ -59,6 +46,7 @@ function InitializeBtn() {
   const geolocationBtn = document.querySelector("#data-btn");
   const adressBtn = document.querySelector("#alt-btn");
   const altBtn = document.querySelector("#decline-btn");
+  const homeBtn = document.querySelector("#home-btn");
 
   geolocationBtn.addEventListener("click", () => {
     getLocation();
@@ -73,6 +61,9 @@ function InitializeBtn() {
     geolocationBtn.classList.add("hidden");
     document.querySelector("#first-screen > p").classList.add("hidden");
     document.querySelector("section").classList.remove("hidden");
+  });
+  homeBtn.addEventListener("click", () => {
+    location.reload();
   });
 }
 
@@ -114,4 +105,42 @@ function renderSecondScreen(data) {
   const tempMax = Math.round(data.main.temp_max - 273);
   const tempMin = Math.round(data.main.temp_min - 273);
   const temp = Math.round(data.main.temp - 273);
+  function InitializeBtn() {
+    const geolocationBtn = document.querySelector("#data-btn");
+    geolocationBtn.addEventListener("click", () => {
+      getLocation();
+      geolocationBtn.classList.add("clicked");
+    });
+    const adressBtn = document.querySelector("#alt-btn");
+    adressBtn.addEventListener("click", () => {
+      getWeatherDataAdress();
+      adressBtn.classList.add("clicked");
+    });
+  }
+
+  document.querySelector("#first-screen").classList.add("hidden");
+  document.querySelector("#second-screen").classList.remove("hidden");
+  document.querySelector("#second-screen").innerHTML = `
+    <header>
+          <img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>
+          ${description}
+        </header>
+        <section>
+          <article>
+            <p class="minor-text">${city} ${country}</p>
+            <p id="degrees-data">atual ${temp}&#176;C</p>
+          </article>
+          <div id="minor-info">
+            <div class="day-info">
+              <div>min</div>
+              <p class="days">${tempMin}&#176;C</p>
+            </div>
+            <div class="day-info">
+              <div>max</div>
+              <p class="days">${tempMax}&#176;C</p>
+            </div>
+          </div>
+          <button class="geolocation-btn" id="home-btn">Return</button>
+        </section>
+  `;
 }
