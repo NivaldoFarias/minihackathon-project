@@ -86,16 +86,6 @@ function getWeatherDataAdress() {
     .then(renderSecondScreen);
 }
 
-function getWeatherDataAdress() {
-  const city = document.querySelector("#city").value;
-  const state = document.querySelector("#state").value;
-  const country = document.querySelector("#country").value;
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${API_KEY}`
-  )
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-}
 function renderSecondScreen(data) {
   console.log(data);
   const city = data.name;
